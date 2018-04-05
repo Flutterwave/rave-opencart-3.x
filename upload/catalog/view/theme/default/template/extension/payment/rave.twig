@@ -1,0 +1,38 @@
+{% if not livemode %}
+<div class="alert alert-danger" role="alert">{{text_testmode}}</div>
+{% endif %}
+
+<script src='{{script_tag}}' async></script> 
+<script type="text/javascript">
+
+  $('#ravePay').on('click', function () {
+     var ravePopup =   getpaidSetup({
+        PBFPubKey: '{{public_key}}',
+        customer_email: '{{email}}',
+        customer_firstname:  '{{firstname}}',
+        customer_lastname:  '{{lastname}}',
+        amount: '{{amount}}',
+        currency: '{{currency}}',
+        txref : '{{reference}}',
+        country : '{{country}}',
+        onclose: function() {},
+        callback: function(response) {
+          var flw_ref = response.tx.flwRef;
+          ravePopup.close();
+          if ( response.tx.chargeResponseCode == "00" || response.tx.chargeResponseCode == "0" ) {
+                var callback_url = '{{ callback_url|raw }}';
+                var decoded = callback_url.replace(/&amp;/g, '&');
+                decoded = decoded + '&flw_reference='+flw_ref;
+                  window.location.href=decoded;
+          }else{
+              alert(response.respmsg);
+          }
+        }
+      });
+});
+   
+</script>
+
+<button type="button"   id="ravePay" value="<?php echo $button_confirm; ?>" class="btn btn-primary pull-right" style="display:nones;">Pay to complete your order</button>
+
+
