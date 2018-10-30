@@ -24,11 +24,11 @@ Accept Credit card, Debit card and Bank account payment on Sprout Invoice with t
 
 3. Naviagte to `Extensions > Extensions Installer` then upload the rave.ocmod file.
 
-3.  After successful installation, navigate to `Extensions > Extensions` click payments on the drop down and Rave will be on the list of payment methods.
+4.  After successful installation, navigate to `Extensions > Extensions` click `payments` on the drop down and Rave will be on the list of payment methods.
 
-4. Click on the install button, after installing click on the configure button.
+5. Click on the install button, after installing click on the configure button.
 
-5. After configuring rave and enabling it, you are ready to go!
+6. After configuring rave and enabling it, you are ready to go!
 
 >Test Card
 
