@@ -38,11 +38,18 @@ class ControllerExtensionPaymentRave extends Controller {
                 case 'KES':
                     $country = 'KE';
                     break;
+                case 'ZAR':
+                    $country = 'ZA';
+                    break;
                 default:
                     $country = 'NG';
                     break;
             }
             $data['country'] = $country;
+            $data['modal_logo'] = $this->config->get('payment_rave_modal_logo');
+            $data['modal_title'] = $this->config->get('payment_rave_modal_title');
+            $data['modal_desc'] = $this->config->get('payment_rave_modal_desc');
+            $data['paymentplan'] = $this->config->get('payment_rave_paymentplan');
             $data['callback_url'] = $this->url->link('extension/payment/rave/callback', 'reference=' . rawurlencode($data['reference']), 'SSL');
             return $this->load->view('extension/payment/rave', $data);
 

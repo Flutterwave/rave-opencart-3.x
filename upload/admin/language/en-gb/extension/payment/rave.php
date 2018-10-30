@@ -21,6 +21,10 @@ $_['entry_live_secret_key'] = 'Live Secret Key:';
 $_['entry_live'] = 'Live Mode';
 $_['entry_debug'] = 'Sandbox(Test) Mode';
 $_['entry_total'] = 'Total';
+$_['entry_modal_logo'] = 'Modal Logo';
+$_['entry_modal_title'] = 'Modal Title';
+$_['entry_modal_desc'] = 'Modal Description';
+$_['entry_paymentplan'] = 'Payment Plan ID (optional)';
 $_['entry_approved_status'] = 'Approved Status';
 $_['entry_declined_status'] = 'Declined Status:';
 $_['entry_error_status'] = 'Error Status:';
@@ -32,6 +36,7 @@ $_['entry_sort_order'] = 'Sort Order';
 $_['help_live'] = 'Use the live mode to process transactions? Request Go Live on the Rave Dashboard to get live keys.';
 $_['help_debug'] = 'Logs additional information to the system log';
 $_['help_total'] = 'The checkout total the order must reach before this payment method becomes active';
+$_['help_paymentplan'] = 'Input payment plan id to subsribe customers to the plan';
 
 // Error Messages
 $_['error_permission'] = 'Warning: You do not have permission to modify the Rave module!';
