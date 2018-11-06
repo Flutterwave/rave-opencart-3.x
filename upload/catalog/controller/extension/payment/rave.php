@@ -38,11 +38,17 @@ class ControllerExtensionPaymentRave extends Controller {
                 case 'KES':
                     $country = 'KE';
                     break;
+                case 'ZAR':
+                    $country = 'ZA';
+                    break;
                 default:
                     $country = 'NG';
                     break;
             }
             $data['country'] = $country;
+            $data['modal_logo'] = $this->config->get('payment_rave_modal_logo');
+            $data['modal_title'] = $this->config->get('payment_rave_modal_title');
+            $data['modal_desc'] = $this->config->get('payment_rave_modal_desc');
             $data['callback_url'] = $this->url->link('extension/payment/rave/callback', 'reference=' . rawurlencode($data['reference']), 'SSL');
             return $this->load->view('extension/payment/rave', $data);
 
@@ -111,7 +117,7 @@ class ControllerExtensionPaymentRave extends Controller {
                 if ($this->config->get('rave_debug')) {
                     $this->log->write('rave :: CALLBACK DATA: ' . print_r($this->request->get, true));
                 }
-                $amount = (int)$order_info['total'];
+                $amount = $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
                 $result = $this->verify_payment($flw_reference);
                 
                 $order_status_id = $this->config->get('payment_config_order_status_id');

@@ -38,6 +38,9 @@ class ControllerExtensionPaymentRave extends Controller
         
         $data['entry_live'] = $this->language->get('entry_live');
         $data['entry_debug'] = $this->language->get('entry_debug');
+        $data['entry_modal_logo'] = $this->language->get('entry_modal_logo');
+        $data['entry_modal_title'] = $this->language->get('entry_modal_title');
+        $data['entry_modal_desc'] = $this->language->get('entry_modal_desc');
         $data['entry_total'] = $this->language->get('entry_total');
         $data['entry_approved_status'] = $this->language->get('entry_approved_status');
         $data['entry_declined_status'] = $this->language->get('entry_declined_status');
@@ -96,6 +99,9 @@ class ControllerExtensionPaymentRave extends Controller
                 'payment_rave_live_public_key',
                 'payment_rave_live_secret_key',
                 'payment_rave_live',
+                'payment_rave_modal_logo',
+                'payment_rave_modal_title',
+                'payment_rave_modal_desc',
                 'payment_rave_total',
                 'payment_rave_approved_status_id',
                 'payment_rave_declined_status_id',
